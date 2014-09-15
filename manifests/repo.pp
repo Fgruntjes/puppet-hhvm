@@ -30,6 +30,9 @@ class hhvm::repo {
       # see https://github.com/facebook/hhvm/wiki/Prebuilt%20Packages%20for%20HHVM
       include hhvm::repo::apt
     }
+    'centos','scientific','redhat','oraclelinux' : {
+      include hhvm::repo::yum
+    }
     default: {
       fail("No repo available for ${::osfamily}/${::operatingsystem}, please fork this module and add one in repo.pp")
     }
